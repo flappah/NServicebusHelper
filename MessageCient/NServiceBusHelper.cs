@@ -194,8 +194,7 @@ namespace MessageCient
             }
 
             // item matching is based on the supplied CorrelationId. If no correlationId can be determined the last item in the queue
-            // is used to match on. There's a guaranteed reply delivery but if there is no correlationId can be determined no 
-            // exact delivery can be guaranteed!
+            // is used to match on. There's a guaranteed reply delivery but if there is no correlationId no EXACT delivery can be guaranteed!
             Guid instanceId = Guid.Empty;
             if (context.MessageHeaders.ContainsKey("CorrelationId"))
             {
@@ -206,7 +205,6 @@ namespace MessageCient
             {
                 instanceId = _itemList.Last().Key;
             }
-
 
             if (_itemList.ContainsKey(instanceId))
             {

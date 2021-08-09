@@ -207,9 +207,13 @@ namespace MessageCient
                 instanceId = _itemList.Last().Key;
             }
 
-            _itemList[instanceId].Reply = message;
-            _itemList[instanceId].Context = context;
-            _itemList[instanceId].ResetEvent.Set();
+
+            if (_itemList.ContainsKey(instanceId))
+            {
+                _itemList[instanceId].Reply = message;
+                _itemList[instanceId].Context = context;
+                _itemList[instanceId].ResetEvent.Set();
+            }
 
             return Task.CompletedTask;
         }

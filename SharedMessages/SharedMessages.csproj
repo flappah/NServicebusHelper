@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.7" />
+    <PackageReference Include="NServiceBus" Version="7.4.4" />
+    <PackageReference Include="PostSharp.Patterns.Diagnostics" Version="6.8.9" />
+  </ItemGroup>
+
+</Project>
